@@ -1,0 +1,152 @@
+{
+ "properties": {
+  "displayName": "StrykerQRadarAzureIntergrationEnablePaaSDiagnosticstoDigiSecDiagStorage",
+  "policyType": "Custom",
+  "description": "StrykerQRadarAzureIntergrationEnablePaaSDiagnosticstoDigiSecDiagStorage",
+  "metadata": {
+   "category": "Monitoring",
+   "version": "1.0",
+   "parameterScopes": {
+    "eventHubRuleId": "/subscriptions/2018298c-8c83-444b-b77f-44925b91daf5",
+    "resourceGroupLocation": "/subscriptions/2018298c-8c83-444b-b77f-44925b91daf5",
+    "eventHubDetails": "/subscriptions/2018298c-8c83-444b-b77f-44925b91daf5/resourcegroups/qradar-poc/providers/microsoft.eventhub/namespaces/evh-azqrint-poc-eus-001/eventhubs/strykerazqrintpoceusevnh"
+   },
+   "createdBy": "c98f6e09-d6c5-4371-9e56-0f320f7bdd67",
+   "createdOn": "2021-08-03T23:22:52.096249Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "parameters": {
+   "eventHubAuthorizationRuleId": {
+    "type": "string",
+    "metadata": {
+     "displayName": "eventHubAuthorizationRuleId",
+     "description": "eventHubAuthorizationRuleId"
+    },
+    "defaultValue": "/subscriptions/2018298c-8c83-444b-b77f-44925b91daf5/resourceGroups/Qradar-PoC/providers/Microsoft.EventHub/namespaces/evh-azqrint-poc-eus-001/authorizationrules/RootManageSharedAccessKey"
+   }
+  },
+  "policyDefinitions": [
+   {
+    "policyDefinitionReferenceId": "Deploy Diagnostic Settings for Search Services to Event Hub_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/3d5da587-71bd-41f5-ac95-dd3330c2d58d",
+    "parameters": {
+     "eventHubRuleId": {
+      "value": "[parameters('eventHubAuthorizationRuleId')]"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "Deploy Diagnostic Settings for Data Lake Analytics to Event Hub_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/4daddf25-4823-43d4-88eb-2419eb6dcc08",
+    "parameters": {
+     "eventHubRuleId": {
+      "value": "[parameters('eventHubAuthorizationRuleId')]"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "Deploy Diagnostic Settings for Service Bus to Event Hub_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/6b51af03-9277-49a9-a3f8-1c69c9ff7403",
+    "parameters": {
+     "eventHubRuleId": {
+      "value": "[parameters('eventHubAuthorizationRuleId')]"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "Deploy Diagnostic Settings for Azure SQL Database to Event Hub_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/9a7c7a7d-49e5-4213-bea8-6a502b6272e0",
+    "parameters": {
+     "eventHubRuleId": {
+      "value": "[parameters('eventHubAuthorizationRuleId')]"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "Deploy Diagnostic Settings for Logic Apps to Event Hub_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/a1dae6c7-13f3-48ea-a149-ff8442661f60",
+    "parameters": {
+     "eventHubRuleId": {
+      "value": "[parameters('eventHubAuthorizationRuleId')]"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "Deploy export to Event Hub for Azure Security Center data_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/cdfcce10-4578-4ecd-9703-530938e4abcb",
+    "parameters": {
+     "resourceGroupName": {
+      "value": "QRadar-poc"
+     },
+     "resourceGroupLocation": {
+      "value": "eastus"
+     },
+     "eventHubDetails": {
+      "value": "/subscriptions/2018298c-8c83-444b-b77f-44925b91daf5/resourcegroups/qradar-poc/providers/microsoft.eventhub/namespaces/evh-azqrint-poc-eus-001/eventhubs/strykerazqrintpoceusevnh/authorizationrules/strykerazqrintpoceusevnhsaspol"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "Deploy Diagnostic Settings for Batch Account to Event Hub_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/db51110f-0865-4a6e-b274-e2e07a5b2cd7",
+    "parameters": {
+     "eventHubRuleId": {
+      "value": "[parameters('eventHubAuthorizationRuleId')]"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "Deploy Diagnostic Settings for Data Lake Storage Gen1 to Event Hub_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/e8d096bc-85de-4c5f-8cfb-857bd1b9d62d",
+    "parameters": {
+     "eventHubRuleId": {
+      "value": "[parameters('eventHubAuthorizationRuleId')]"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "Deploy Diagnostic Settings for Key Vault to Event Hub_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/ed7c8c13-51e7-49d1-8a43-8490431a0da2",
+    "parameters": {
+     "eventHubRuleId": {
+      "value": "[parameters('eventHubAuthorizationRuleId')]"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "Deploy Diagnostic Settings for Stream Analytics to Event Hub_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/edf3780c-3d70-40fe-b17e-ab72013dafca",
+    "parameters": {
+     "eventHubRuleId": {
+      "value": "[parameters('eventHubAuthorizationRuleId')]"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "Deploy Diagnostic Settings for Event Hub to Event Hub_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/ef7b61ef-b8e4-4c91-8e78-6946c6b0023f",
+    "parameters": {
+     "eventHubRuleId": {
+      "value": "[parameters('eventHubAuthorizationRuleId')]"
+     }
+    },
+    "groupNames": []
+   }
+  ],
+  "policyDefinitionGroups": []
+ },
+ "id": "/subscriptions/c00c53d4-abfa-496f-b46f-979258609972/providers/Microsoft.Authorization/policySetDefinitions/c1b9c1c095f2472f920b8e8e",
+ "type": "Microsoft.Authorization/policySetDefinitions",
+ "name": "c1b9c1c095f2472f920b8e8e"
+}
